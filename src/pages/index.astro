@@ -1,0 +1,388 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Gabriel Gomes" description="Personal website of Gabriel Gomes.">
+  <main>
+
+    <!-- Nav -->
+    <nav>
+      <span class="nav-name">gg</span>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="hero-label">Hey, I'm</p>
+      <h1>Gabriel Gomes</h1>
+      <p class="hero-tagline">
+        Product Manager with a technical foundation.<br />
+        13+ years across fintech, SaaS, and consulting.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">See my work</a>
+        <a href="#contact" class="btn-secondary">Get in touch</a>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <span class="section-label">About</span>
+      <div class="about-grid">
+        <div>
+          <h2>A bit about me</h2>
+          <p>
+            I'm Gabriel, a Product Manager with over 13 years of experience across
+            fintech, SaaS, and consulting. I hold a post-graduate degree in Service
+            Design and began my career as a developer — pivoting into product after
+            an international scholarship in tech and innovation.
+          </p>
+          <p>
+            I've led cross-functional teams, worked across industries and continents,
+            and built products that are simple, scalable, and rooted in real customer
+            needs.
+          </p>
+        </div>
+        <div class="skills">
+          <p class="skills-label">Things I work with</p>
+          <ul>
+            <li>Product Strategy & Roadmap</li>
+            <li>Agile / Scrum</li>
+            <li>UX Research & Service Design</li>
+            <li>Open Banking & eInvoicing</li>
+            <li>Google Analytics, Mixpanel & SQL</li>
+            <li>Portuguese, English & Spanish</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <span class="section-label">Projects</span>
+      <h2>Selected work</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-top">
+            <span class="project-number">01</span>
+          </div>
+          <h3>SumUp Invoices</h3>
+          <p>Led invoicing product across Brazil, Australia, Germany, Spain, and Italy. Launched a subscription offer from 0 to 1, reaching ~45% of the user base and generating ~€1.9M ARR within two years.</p>
+          <div class="project-tags">
+            <span>Fintech</span>
+            <span>eInvoicing</span>
+            <span>Open Banking</span>
+            <span>SaaS</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <span class="section-label">Contact</span>
+      <div class="contact-inner">
+        <h2>Let's talk</h2>
+        <p>I'm always open to interesting conversations, new opportunities, or just a good chat about product. Feel free to reach out.</p>
+        <a href="mailto:gabrielaugustodm@gmail.com" class="btn-primary">Say hello →</a>
+        <div class="socials">
+          <a href="https://www.linkedin.com/in/gabrielaugustogomes" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Designed & built by Gabriel Gomes</p>
+    </footer>
+
+  </main>
+</Layout>
+
+<style>
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Nav */
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 0;
+  }
+
+  .nav-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  nav ul {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  nav ul a {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover {
+    color: var(--text-primary);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 100px 0 120px;
+  }
+
+  .hero-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+  }
+
+  .hero-tagline {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.85;
+    color: var(--bg);
+  }
+
+  .btn-secondary {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    border-radius: 4px;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--text-muted);
+    color: var(--text-primary);
+  }
+
+  /* Sections */
+  .section {
+    padding: 80px 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .section-label {
+    display: inline-block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 32px;
+  }
+
+  .section h2 {
+    font-size: 1.75rem;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+  }
+
+  .section p {
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    max-width: 580px;
+  }
+
+  /* About */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  @media (max-width: 580px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .skills-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: 16px !important;
+  }
+
+  .skills ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .skills li {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .skills li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--text-muted);
+  }
+
+  /* Projects */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 580px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    transition: border-color 0.2s;
+  }
+
+  .project-card:hover {
+    border-color: var(--text-muted);
+  }
+
+  .project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .project-number {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+.project-card h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+
+  .project-card p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    max-width: none;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .project-tags span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 2px 10px;
+    border-radius: 999px;
+  }
+
+  /* Contact */
+  .contact-inner {
+    max-width: 480px;
+  }
+
+  .contact-inner .btn-primary {
+    margin-top: 8px;
+    margin-bottom: 40px;
+  }
+
+  .socials {
+    display: flex;
+    gap: 24px;
+  }
+
+  .socials a {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    transition: color 0.2s;
+  }
+
+  .socials a:hover {
+    color: var(--text-primary);
+  }
+
+  /* Footer */
+  footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+</style>
