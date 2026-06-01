@@ -30,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- About -->
-    <section class="section" id="about">
+    <section class="section animate" id="about">
       <span class="section-label">About</span>
       <div class="about-grid">
         <div>
@@ -62,11 +62,11 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- Projects -->
-    <section class="section" id="projects">
+    <section class="section animate" id="projects">
       <span class="section-label">Projects</span>
       <h2>Selected work</h2>
       <div class="projects-grid">
-        <article class="project-card">
+        <article class="project-card animate">
           <div class="project-top">
             <span class="project-number">01</span>
           </div>
@@ -80,7 +80,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card animate">
           <div class="project-top">
             <span class="project-number">02</span>
           </div>
@@ -94,7 +94,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card animate">
           <div class="project-top">
             <span class="project-number">03</span>
           </div>
@@ -111,7 +111,7 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- Contact -->
-    <section class="section" id="contact">
+    <section class="section animate" id="contact">
       <span class="section-label">Contact</span>
       <div class="contact-inner">
         <h2>Let's talk</h2>
@@ -413,4 +413,46 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.8rem;
     color: var(--text-muted);
   }
+
+  /* Hero entrance animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-label   { animation: fadeUp 0.7s ease both; animation-delay: 0.1s; }
+  .hero h1      { animation: fadeUp 0.7s ease both; animation-delay: 0.3s; }
+  .hero-tagline { animation: fadeUp 0.7s ease both; animation-delay: 0.5s; }
+  .hero-cta     { animation: fadeUp 0.7s ease both; animation-delay: 0.7s; }
+
+  /* Scroll animations */
+  .animate {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .project-card.animate:nth-child(2) { transition-delay: 0.15s; }
+  .project-card.animate:nth-child(3) { transition-delay: 0.3s; }
 </style>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
+  );
+
+  document.querySelectorAll('.animate').forEach((el) => observer.observe(el));
+</script>
