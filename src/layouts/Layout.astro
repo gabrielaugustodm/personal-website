@@ -6,8 +6,10 @@ interface Props {
 
 const {
   title = "Gabriel Gomes",
-  description = "Personal website of Gabriel Gomes.",
+  description = "Product Manager with 13+ years of experience across fintech, SaaS, and consulting. Based in São Paulo, Brazil.",
 } = Astro.props;
+
+const canonicalURL = "https://gabrielaugustogomes.com";
 ---
 
 <!doctype html>
@@ -15,7 +17,24 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
     <meta name="description" content={description} />
+    <meta name="author" content="Gabriel Gomes" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Gabriel Gomes" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
