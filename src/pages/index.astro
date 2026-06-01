@@ -169,6 +169,10 @@ import Layout from '../layouts/Layout.astro';
     color: var(--text-primary);
   }
 
+  nav ul a.active {
+    color: var(--text-primary);
+  }
+
   /* Hero */
   .hero {
     padding: 100px 0 120px;
@@ -455,4 +459,21 @@ import Layout from '../layouts/Layout.astro';
   );
 
   document.querySelectorAll('.animate').forEach((el) => observer.observe(el));
+
+  // Nav highlight
+  const navLinks = document.querySelectorAll('nav ul a');
+  const navObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => link.classList.remove('active'));
+          const active = document.querySelector(`nav ul a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -55% 0px' }
+  );
+
+  document.querySelectorAll('section[id]').forEach((s) => navObserver.observe(s));
 </script>
