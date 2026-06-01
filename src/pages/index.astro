@@ -34,6 +34,7 @@ import Layout from '../layouts/Layout.astro';
       <span class="section-label">About</span>
       <div class="about-grid">
         <div>
+          <img src="/profile.png" alt="Gabriel Gomes" class="profile-photo" />
           <h2>A bit about me</h2>
           <p>
             I'm Gabriel, a Product Manager with over 13 years of experience across
@@ -282,6 +283,17 @@ import Layout from '../layouts/Layout.astro';
     .about-grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    margin-bottom: 24px;
+    border: 2px solid var(--border);
+    display: block;
   }
 
   .resume-btn {
