@@ -632,7 +632,10 @@ import Layout from '../layouts/Layout.astro';
 
     // Resume link
     const resumeLink = document.querySelector<HTMLAnchorElement>('.resume-btn');
-    if (resumeLink) resumeLink.setAttribute('href', lang === 'pt' ? '/resume-pt.pdf' : '/resume.pdf');
+    if (resumeLink) {
+      resumeLink.setAttribute('href', lang === 'pt' ? '/resume-pt.pdf' : '/resume.pdf');
+      resumeLink.setAttribute('download', lang === 'pt' ? 'Currículo - Gabriel Gomes.pdf' : 'Resume - Gabriel Gomes.pdf');
+    }
 
     // Toggle button label (shows the OTHER language)
     const toggle = document.querySelector<HTMLButtonElement>('.lang-toggle');
