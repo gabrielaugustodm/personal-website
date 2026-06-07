@@ -627,6 +627,9 @@ import Layout from '../layouts/Layout.astro';
       if (skillItems[i]) skillItems[i].textContent = skill;
     });
 
+    // Page language attribute (accessibility)
+    document.documentElement.setAttribute('lang', lang === 'pt' ? 'pt-BR' : 'en');
+
     // Resume link
     const resumeLink = document.querySelector<HTMLAnchorElement>('.resume-btn');
     if (resumeLink) resumeLink.setAttribute('href', lang === 'pt' ? '/resume-pt.pdf' : '/resume.pdf');
